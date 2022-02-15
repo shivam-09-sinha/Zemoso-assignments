@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        Simple webAPP
+        </title>
+        <script>
+            function clickCounter() {
+              if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                  localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } else {
+                  localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+              } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+              }
+
+                //Session
+                if (typeof(Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                  sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                } else {
+                  sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result2").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s).";
+              } else {
+                document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
+              }
+
+
+
+
+
+
+            }
+            </script>
+            </head>
+            <body style="background-color: black;">
+                <br><br><br><br><br><br>
+                <center>
+            
+            <p><button onclick="clickCounter()" type="button">CLICK ME</button></p>
+            <h3 style="color: yellow;">Local Count:</h3>
+            <div id="result" style="color: red;"></div>
+            <h3 style="color: yellow;"> Session Count:</h3>
+            <div id="result2" style="color: red;"></div>
+    
+
+            </center>
+            
+
+    </body>
+</html>
