@@ -8,4 +8,4 @@ var op = function (func) {
     return func(x, y);
 }
 
-console.log(op(add));
+console.log(op(add));// assignment1
